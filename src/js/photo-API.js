@@ -10,7 +10,7 @@ export default class PhotoApiService {
     }
 
     async fetchPhotos() {
-        const url = `${BASE_URL}/?q=${this.searchValue}&key=${API_KEY}&image_type=photo&orientation=horizontal&safesearch=true&page=${this.page}&per_page=5`;
+        const url = `${BASE_URL}/?q=${this.searchValue}&key=${API_KEY}&image_type=photo&orientation=horizontal&safesearch=true&page=${this.page}&per_page=40`;
 
         try {
             const {data} = await axios.get(url);
