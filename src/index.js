@@ -187,7 +187,8 @@ function addRenderList(photos) {
 
   gallery.insertAdjacentHTML('beforeend', renderEl)
 
-  new SimpleLightbox('.gallery a', { captionsData: "alt", captionDelay: 250, captionPosition: "bottom" });
+  const lightbox =  new SimpleLightbox('.gallery a', { captionsData: "alt", captionDelay: 250, captionPosition: "bottom" });
+  lightbox.refresh();
 } 
 
 function clearGalleryList() {
