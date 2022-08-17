@@ -7,15 +7,17 @@ export default class PhotoApiService {
     constructor(){
         this.searchValue = '';
         this.page = 1;
+        this.per_page = 40;
     }
 
     async fetchPhotos() {
-        const url = `${BASE_URL}/?q=${this.searchValue}&key=${API_KEY}&image_type=photo&orientation=horizontal&safesearch=true&page=${this.page}&per_page=40`;
+        const url = `${BASE_URL}/?q=${this.searchValue}&key=${API_KEY}&image_type=photo&orientation=horizontal&safesearch=true&page=${this.page}&per_page=${this.per_page}`;
 
         try {
             const {data} = await axios.get(url);
             this.page += 1;
             console.log(data);
+            console.log(data.hits.length);
             return data;
         } catch (error) {
             return console.log(error);
@@ -33,6 +35,7 @@ export default class PhotoApiService {
     resetPage() {
         this.page = 1;
     }
+
 }
 
 
