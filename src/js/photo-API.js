@@ -16,8 +16,8 @@ export default class PhotoApiService {
         try {
             const {data} = await axios.get(url);
             this.page += 1;
-            console.log(data);
-            console.log(data.hits.length);
+            // console.log(data);
+            // console.log(data.hits.length);
             return data;
         } catch (error) {
             return console.log(error);
